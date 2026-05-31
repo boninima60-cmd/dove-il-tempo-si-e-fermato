@@ -4,54 +4,340 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dove il tempo si è fermato</title>
+
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --rosa-pompeiano: #d88a8a;
+      --rosa-chiaro: #f4d6d6;
+      --testo-scuro: #2b1b1b;
+      --bianco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background-color: #f4efea;
-      color: #222;
+      background-color: var(--rosa-pompeiano);
+      color: var(--testo-scuro);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: var(--rosa-chiaro);
+      min-height: 100vh;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    header img.occhio {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    header p.sottotitolo {
+      margin: 0 0 15px;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: var(--testo-scuro);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .audio-wrapper {
+      margin: 10px auto 0;
       text-align: center;
     }
-    header {
-      background-color: #f4efea;
-      padding: 20px;
+
+    .audio-wrapper audio {
+      width: 80%;
+      max-width: 420px;
     }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #222;
+
+    section {
+      padding: 30px 20px;
+    }
+
+    section h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+      padding-bottom: 5px;
+    }
+
+    .testo-narrativo {
+      line-height: 1.7;
+      font-size: 0.98rem;
+      text-align: justify;
+    }
+
+    .grassetto {
       font-weight: 600;
     }
+
+    .immagini-griglia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .immagine-box {
+      background-color: rgba(255,255,255,0.7);
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    }
+
+    .immagine-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .immagine-box p {
+      margin: 8px 0 0;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
     footer {
-      margin-top: 40px;
+      margin-top: 20px;
       padding: 20px;
-      font-size: 0.9em;
-      color: #555;
-      border-top: 1px solid #ccc;
+      background-color: var(--rosa-pompeiano);
+      color: var(--bianco);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-contenuto {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      margin-bottom: 10px;
+    }
+
+    .footer-logo img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+    }
+
+    .footer-dati p {
+      margin: 3px 0;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .audio-wrapper audio {
+        width: 100%;
+      }
+      section {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <img src="Locchio.png" alt="L’occhio" width="600">
-    <h1>Dove il tempo si è fermato</h1>
-    <nav>
-      <a href="#storia">Storia</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
-  </header>
+  <main>
+    <!-- HEADER -->
+    <header id="home">
+      <!-- Immagine occhio (Dio che guarda dall’alto) -->
+      <img src="Locchio.png" alt="L’occhio che osserva l’umanità dall’alto" class="occhio">
 
-  <section id="storia">
-    <h2>Storia</h2>
-    <p>Un luogo dove il silenzio parla, e il tempo si ferma per ascoltare...</p>
-  </section>
+      <h1>Dove il tempo si è fermato</h1>
+      <p class="sottotitolo">
+        Un gesto d’amicizia che ferma il tempo, un occhio che veglia, un luogo che cambia destino.
+      </p>
 
-  <footer>
-    <p>© 2026 Università di Arezzo – Miguel Boninima</p>
-    <p>Progetto “Dove il tempo si è fermato”</p>
-  </footer>
+      <nav>
+        <a href="#storia">Storia</a>
+        <a href="#servizi">Percorso</a>
+        <a href="#contatti">Contesto</a>
+      </nav>
+
+      <!-- Musica di fondo: sostituisci l’URL con il link reale della tua canzone -->
+      <div class="audio-wrapper">
+        <audio controls autoplay loop>
+          <source src="URL_TUA_CANZONE.mp3" type="audio/mpeg">
+          Il tuo browser non supporta l’audio.
+        </audio>
+      </div>
+    </header>
+
+    <!-- BODY -->
+
+    <!-- SEZIONE STORIA -->
+    <section id="storia">
+      <h2>Storia</h2>
+      <div class="testo-narrativo">
+        <p>
+          Due amici si abbracciano. Non è un addio, ma un istante sospeso: un filo che vibra tra chi resta e chi parte.
+          Uno dei due si allontana, l’altro lo guarda andare via e sente che quel momento non può scivolare via così,
+          come un’ora qualunque.
+        </p>
+        <p>
+          Allora corre. Corre verso l’edificio del tempo, sale, raggiunge la grande lancetta dell’orologio e si aggrappa.
+          In quell’istante, l’orologio smette di essere un semplice meccanismo: diventa un <span class="grassetto">occhio immenso</span>,
+          sospeso sopra la città. È l’occhio di Dio, o del destino, o della memoria che osserva l’umanità dall’alto.
+        </p>
+        <p>
+          Quando la lancetta si ferma, si ferma anche il mondo. Non ci sono più auto, non ci sono più voci, non c’è più rumore.
+          Solo gli uccelli parlano con gli alberi. Il tempo si è fermato per un gesto d’amore: trattenere un amico, trattenere
+          un istante, trattenere la vita che corre troppo in fretta.
+        </p>
+      </div>
+
+      <!-- Immagini storiche: INGRESSO, GITA 1965, INTERNO -->
+      <div class="immagini-griglia">
+        <div class="immagine-box">
+          <img src="INGRESSO.jpg" alt="Ingresso storico del complesso">
+          <p>
+            <span class="grassetto">Ingresso</span> – La soglia del luogo. Il viale conduce a un edificio che per anni ha
+            custodito storie silenziose, ora pronto a raccontarsi in modo diverso.
+          </p>
+        </div>
+
+        <div class="immagine-box">
+          <img src="GITA1965.jpg" alt="Gita 1965 davanti all’edificio">
+          <p>
+            <span class="grassetto">Gita 1965</span> – Un gruppo in partenza, un pullman, l’orologio che segna un’ora qualunque.
+            La vita scorre davanti alla facciata, senza immaginare ciò che accade all’interno.
+          </p>
+        </div>
+
+        <div class="immagine-box">
+          <img src="INTERNO.jpg" alt="Interno del corridoio">
+          <p>
+            <span class="grassetto">Interno</span> – Il corridoio vuoto conserva il passo di chi ha atteso, sperato, sofferto.
+            Oggi diventa spazio di memoria, non più di reclusione.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE PERCORSO / SERVIZI (TRANSIZIONE OSPEDALE → UNISI) -->
+    <section id="servizi">
+      <h2>Percorso e trasformazione</h2>
+      <div class="testo-narrativo">
+        <p>
+          Il progetto racconta la <span class="grassetto">trasformazione</span> di questo luogo: da ospedale psichiatrico a sede
+          dell’Università di Siena. Non è una cancellazione del passato, ma una sua riscrittura attraverso nuovi usi,
+          nuove presenze, nuovi significati.
+        </p>
+        <p>
+          L’edificio che un tempo ospitava il dolore oggi accoglie studenti, docenti, ricercatori. Le aule sostituiscono le
+          stanze di degenza, le lezioni sostituiscono le terapie forzate, la conoscenza prende il posto del controllo.
+        </p>
+      </div>
+
+      <!-- Immagini nuove: FACCIATA, DONNA SEDUTA SCULTURA, STUDENTESSA -->
+      <div class="immagini-griglia">
+        <div class="immagine-box">
+          <img src="FACCIATA.jpg" alt="Facciata attuale della sede UNISI">
+          <p>
+            <span class="grassetto">Facciata</span> – Lo stesso edificio, un altro destino. Le bandiere, l’ingresso aperto,
+            la presenza dell’università trasformano il volto del luogo.
+          </p>
+        </div>
+
+        <div class="immagine-box">
+          <img src="DONNA_SEDUTA_SCULTURA.jpg" alt="Donna seduta, scultura esterna">
+          <p>
+            <span class="grassetto">Donna seduta (scultura)</span> – Una figura che ascolta il silenzio. Il corpo immobile
+            diventa simbolo di memoria, di cura, di attenzione al passato che ancora parla.
+          </p>
+        </div>
+
+        <div class="immagine-box">
+          <img src="STUDENTESSA.jpg" alt="Studentessa che studia nel nuovo spazio universitario">
+          <p>
+            <span class="grassetto">Studentessa</span> – Il presente vivo. Dove un tempo c’erano pazienti, oggi ci sono studenti:
+            la conoscenza prende il posto del dolore, il futuro si scrive tra queste mura.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEZIONE CONTESTO ACCADEMICO / CONTATTI -->
+    <section id="contatti">
+      <h2>Contesto accademico</h2>
+      <div class="testo-narrativo">
+        <p>
+          Questo progetto nasce all’interno del corso di <span class="grassetto">Informatica applicata al Patrimonio Culturale</span>,
+          come esercizio di lettura, interpretazione e restituzione digitale di un luogo complesso. La pagina web diventa
+          uno spazio narrativo in cui immagini storiche, fotografie contemporanee, suono e parola si intrecciano per raccontare
+          una trasformazione.
+        </p>
+        <p>
+          L’occhio che sostituisce l’orologio non misura più il tempo, ma osserva l’umanità dall’alto: un invito a fermarsi,
+          a guardare, a ricordare e a immaginare nuovi usi per gli spazi ereditati dal passato.
+        </p>
+        <p>
+          <span class="grassetto">Università degli Studi di Siena</span><br>
+          Cattedra di Informatica applicata al Patrimonio Culturale<br>
+          Anno accademico 2025–2026
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-contenuto">
+        <div class="footer-logo">
+          <img src="LOGO_UNISI.png" alt="Logo Università di Siena">
+        </div>
+        <div class="footer-dati">
+          <p>Università degli Studi di Siena</p>
+          <p>Cattedra di Informatica applicata al Patrimonio Culturale</p>
+          <p>Anno accademico 2025–2026</p>
+          <p>Progetto: <span class="grassetto">“Dove il tempo si è fermato”</span></p>
+        </div>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
