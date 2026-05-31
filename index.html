@@ -11,26 +11,47 @@
       font-family: "Inter", sans-serif;
       background-color: #f4efea;
       color: #222;
-      line-height: 1.7;
       text-align: center;
     }
-    p {
-      width: 70%;
-      margin: 20px auto;
-      font-size: 1.1em;
+    header {
+      background-color: #f4efea;
+      padding: 20px;
     }
-    audio {
-      margin-top: 30px;
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
-  <h1>Dove il tempo si è fermato</h1>
- <img src="Locchio.png" alt="L’occhio">
-  <p>Un luogo dove il silenzio parla, e il tempo si ferma per ascoltare.</p>
-  <audio controls autoplay loop>
-    <source src="https://docs.google.com/uc?export=download&id=1_InmQYfqT3hnJXolQEQFZEVi8qfrIBgj" type="audio/mpeg">
-    Il tuo browser non supporta l’audio.
-  </audio>
+  <header>
+    <img src="Locchio.png" alt="L’occhio" width="600">
+    <h1>Dove il tempo si è fermato</h1>
+    <nav>
+      <a href="#storia">Storia</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <section id="storia">
+    <h2>Storia</h2>
+    <p>Un luogo dove il silenzio parla, e il tempo si ferma per ascoltare...</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Università di Arezzo – Miguel Boninima</p>
+    <p>Progetto “Dove il tempo si è fermato”</p>
+  </footer>
 </body>
 </html>
